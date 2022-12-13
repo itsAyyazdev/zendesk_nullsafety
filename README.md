@@ -8,6 +8,20 @@ You must set a compatible theme *theme* in the `AndroidManifest.xml` file's `<ap
 
 The Android example of this shows the same details.
 
+## Usage
+
+```
+   zendesk.startChat(
+      isPreChatFormEnabled: true,
+    ).then((r) {
+      print('startChat finished');
+    }).catchError((e) {
+      print('error $e');
+    });
+    
+```
+
+
 ## For Developers
 
 The plugin is using [Pigeon](https://pub.dev/packages/pigeon) to generate all the interfaces needed.

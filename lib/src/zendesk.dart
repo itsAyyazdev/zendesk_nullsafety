@@ -57,7 +57,7 @@ class Zendesk {
   }
 
   Future<void> startChat({
-    bool? isPreChatFormEnabled,
+    required bool isPreChatFormEnabled,
     bool? isOfflineFormEnabled,
     bool? isAgentAvailabilityEnabled,
     bool? isChatTranscriptPromptEnabled,
@@ -68,14 +68,14 @@ class Zendesk {
   }) async {
     StartChatRequest request = StartChatRequest()
       ..isPreChatFormEnabled = isPreChatFormEnabled
-      ..isOfflineFormEnabled = isOfflineFormEnabled
-      ..isAgentAvailabilityEnabled = isAgentAvailabilityEnabled
-      ..isChatTranscriptPromptEnabled = isChatTranscriptPromptEnabled
+      ..isOfflineFormEnabled = isOfflineFormEnabled ?? false
+      ..isAgentAvailabilityEnabled = isAgentAvailabilityEnabled ?? false
+      ..isChatTranscriptPromptEnabled = isChatTranscriptPromptEnabled ?? true
       ..messagingName = messagingName
       ..iosBackButtonTitle = iosBackButtonTitle
       ..iosNavigationBarColor = iosNavigationBarColor?.value
       ..iosNavigationTitleColor = iosNavigationTitleColor?.value;
-      
+
     await _chatApi.startChat(request);
   }
 }
