@@ -75,7 +75,7 @@ class Zendesk {
       ..iosBackButtonTitle = iosBackButtonTitle
       ..iosNavigationBarColor = iosNavigationBarColor?.value
       ..iosNavigationTitleColor = iosNavigationTitleColor?.value;
-
+      
     await _chatApi.startChat(request);
   }
 }
