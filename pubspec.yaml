@@ -1,0 +1,28 @@
+name: zendesk
+description: Flutter interface for Zendesk Mobile SDK
+version: 1.0.0
+homepage: https://github.com/emostar/flutter-zendesk
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  pigeon: ^4.2.10
+  change_app_package_name:
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.codeheadlabs.zendesk
+        pluginClass: ZendeskPlugin
+      ios:
+        pluginClass: ZendeskPlugin
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
